@@ -85,7 +85,8 @@ public class CustomArrayList<E> {
 		sb.append('[');
 		for (int i = 0; i < size; i++) {
 			Arrays.toString(container);
-			sb.append(container[i].toString());
+			String itemStr = (container[i] != null) ? container[i].toString() : null;
+			sb.append(itemStr);
 			sb.append((i == size - 1) ? "]" : ", ");
 		}
 		return sb.toString();

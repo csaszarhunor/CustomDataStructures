@@ -3,7 +3,9 @@ package main;
 import java.util.Iterator;
 
 import collection.list.CustomArrayList;
+import collection.queue.CustomQueue;
 import collection.set.CustomHashSet;
+import collection.stack.CustomStack;
 
 public class Main {
 
@@ -12,7 +14,7 @@ public class Main {
 		/*
 		 * test1 CustomArrayList
 		 */
-		// maintain the order of insertion
+		// keeps the order of insertion
 		CustomArrayList<String> list = new CustomArrayList<>();
 		list.add("one");
 		list.add("two");
@@ -33,7 +35,7 @@ public class Main {
 		/*
 		 * test2 CustomHashSet
 		 */
-		// doesn't maintain the order of insertion
+		// doesn't keep the order of insertion
 		CustomHashSet<String> set = new CustomHashSet<>();
 		set.add("one");
 		set.add("two");
@@ -56,5 +58,38 @@ public class Main {
 		while(it.hasNext()){
 			System.out.print(it.next() + " ");
 		}
+		System.out.println();
+		
+		/*
+		 * test3 CustomStack
+		 */
+		// keeps the order of insertion
+		CustomStack<String> stack = new CustomStack<>();
+		stack.push("one");
+		stack.push("two");
+		stack.push("three");
+		System.out.println(stack.size());
+		System.out.println(stack.toString());
+		
+		// the item stored last gets out first (LIFO)
+		System.out.println(stack.pop());
+		stack.push("four");
+		System.out.println(stack.toString());
+		
+		/*
+		 * test3 CustomQueue
+		 */
+		// keeps the order of insertion
+		CustomQueue<String> queue = new CustomQueue<>();
+		queue.add("one");
+		queue.add("two");
+		queue.add("three");
+		System.out.println(queue.size());
+		System.out.println(queue.toString());
+		
+		// the item stored last gets out first (LIFO)
+		System.out.println(queue.poll());
+		queue.add("four");
+		System.out.println(queue.toString());
 	}
 }
